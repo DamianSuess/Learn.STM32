@@ -1,9 +1,14 @@
+// Includes are to be alphabetical and groupd
+#include <zz2.h>
+#include "zzz1.h"
 #include <algorithm>
 #include <cstdlib>
-#include <ctime>
 #include <functional>
+#include "test1.h"
+#include "test2.h"
 #include <iostream>
 #include <iterator>
+#include <ctime>
 
 #define BIT_MASK 0xDEADBEAF
 
@@ -17,10 +22,11 @@
 
 namespace LevelOneNamespace
 {
-  namespace LevelTwoNamespace
-  {
+namespace LevelTwoNamespace
+{
 
-    template <typename T, int size>
+    // Note no space after template type
+    template<typename T, int size>
     bool is_sorted(T (&array)[size])
     {
       return std::adjacent_find(array, array + size, std::greater<T>()) ==

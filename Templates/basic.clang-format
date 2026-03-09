@@ -1,11 +1,17 @@
 ﻿---
+# References:
+# - https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# - Terminal - https://github.com/microsoft/terminal/blob/main/.clang-format
+# Online Generator:
+# - https://zed0.co.uk/clang-format-configurator/
+
 BasedOnStyle: Microsoft
 AlignAfterOpenBracket: Align
 AlignEscapedNewlines: DontAlign
 AlignOperands: 'true'
 AlignTrailingComments: 'true'
 BreakBeforeBraces: Allman
-IncludeBlocks: Merge
+IncludeBlocks: Regroup
 IndentCaseLabels: 'true'
 IndentWidth: '2'
 MaxEmptyLinesToKeep: '1'

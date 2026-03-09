@@ -19,6 +19,12 @@
    * Click, YES
 3. 
 
+## Code Formatter
+
+VS Code by default uses clang-format. The '_Xeno Innovations_' style used in the projects is based on Microsoft but with 2 spaces and maintains tidyness.
+
+> Execute the formatter via `SHIFT-ALT-F`.
+
 ## References
 
 * [Get started with STM32Cube for VS Code: from installation to debugging](https://www.youtube.com/watch?v=aWMni01XGeI)

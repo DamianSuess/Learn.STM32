@@ -1,0 +1,25 @@
+﻿---
+BasedOnStyle: Microsoft
+AlignAfterOpenBracket: Align
+AlignEscapedNewlines: DontAlign
+AlignOperands: 'true'
+AlignTrailingComments: 'true'
+BreakBeforeBraces: Allman
+IncludeBlocks: Merge
+IndentCaseLabels: 'true'
+IndentWidth: '2'
+MaxEmptyLinesToKeep: '1'
+NamespaceIndentation: All
+SortIncludes: 'true'
+SortUsingDeclarations: 'true'
+SpaceAfterCStyleCast: 'false'
+SpaceAfterLogicalNot: 'false'
+SpaceInEmptyParentheses: 'false'
+SpacesInAngles: 'false'
+SpacesInContainerLiterals: 'false'
+SpacesInParentheses: 'false'
+SpacesInSquareBrackets: 'false'
+TabWidth: '2'
+UseTab: Never
+
+...

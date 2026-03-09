@@ -1,0 +1,89 @@
+---
+# References:
+# - https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# - Terminal - https://github.com/microsoft/terminal/blob/main/.clang-format
+
+IndentWidth: 2
+Language: Cpp
+BasedOnStyle: Microsoft
+#AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
+#AlignConsecutiveMacros: Consecutive
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+AlignEscapedNewlines: Left
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortCompoundRequirementOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: InlineOnly
+AllowShortIfStatementsOnASingleLine: Never  # if (x) doStuff()  is not allowed
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeBraces: Custom   # Custom, Allman (visual studio), Linux
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterExternBlock: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterObjCDeclaration: true
+  BeforeElse: true
+  BeforeCatch: true
+  BeforeLambdaBody: true
+  BeforeWhile: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyNamespace: false
+BraceWrappingAfterControlStatementStyle: always
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+ColumnLimit: 0      # 160 is ideal
+CommentPragmas: "suppress"
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+Cpp11BracedListStyle: false
+FixNamespaceComments: false
+IncludeBlocks: Regroup
+IncludeCategories:
+    - Regex: '^.*(precomp|pch|stdafx)'
+      Priority: -1
+    - Regex: '^".*"'
+      Priority: 1
+    - Regex: '^<.*>'
+      Priority: 2
+    - Regex: '.*'
+      Priority: 3
+IndentAccessModifiers: false      # Specify whether access modifiers should have their own indentation level
+IndentCaseLabels: true
+InsertNewlineAtEOF: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+MacroBlockBegin: "BEGIN_TEST_METHOD_PROPERTIES|BEGIN_MODULE|BEGIN_TEST_CLASS|BEGIN_TEST_METHOD"
+MacroBlockEnd: "END_TEST_METHOD_PROPERTIES|END_MODULE|END_TEST_CLASS|END_TEST_METHOD"
+NamespaceIndentation: All
+DerivePointerAlignment: false
+PointerAlignment: Left            # char* blarg (ptr on left)
+ReflowComments: false
+SeparateDefinitionBlocks: Always  # Use of empty lines to separate definition blocks, including classes, structs, enums, and functions
+SortIncludes: false
+SpaceAfterCStyleCast: false       # (int)x instead of (int) x
+SpaceAfterTemplateKeyword: false
+#SpacesBeforeTrailingComments: 2
+SpaceBeforeParens: ControlStatements
+SpacesInAngles: false
+SpacesInContainerLiterals: false
+SpacesInSquareBrackets: false
+SpaceInEmptyBlock: true
+UseCRLF: true
+UseTab: Never   # Use spaces

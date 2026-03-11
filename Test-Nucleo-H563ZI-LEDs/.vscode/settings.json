@@ -1,4 +1,5 @@
 {
+    // "extensions.ignoreRecommendations": true,
     "cmake.cmakePath": "cube-cmake",
     "cmake.configureArgs": [
         "-DCMAKE_COMMAND=cube-cmake"

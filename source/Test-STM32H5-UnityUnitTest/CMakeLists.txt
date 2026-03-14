@@ -66,3 +66,16 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+## Unity Unit Testing Framework
+
+##enable_testing()
+### add_subdirectory(tests)
+##set(UNITY_SRC libs/Unity/src/)
+##add_library(Unity STATIC ${UNITY_SRC}/unity.c)
+##target_include_directories(Unity PUBLIC ${UNITY_SRC})
+##
+### Example for single test file
+##add_executable(test_example tests/test_example.c Core/Src/main.c)
+##target_link_libraries(test_example Unity Core/Src)
+##add_test(NAME test_example COMMAND test_example)

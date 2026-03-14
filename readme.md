@@ -13,6 +13,19 @@
   * Test-Nucleo-H563ZI-LEDs - _Blinking LEDs and Toggled LED (based on CubeMX Generated)_
   * Test-STM32-BlankProject - _Empty STM32 Project (VS Code generated)_
 
+## Recommended Tools
+
+* STMicro Tools Needed
+  * [STM32CubeIDE (for VS Code)](https://www.st.com/en/development-tools/stm32cubeide.html)
+  * [STM32CubeMX]()
+* Nice to Have
+  * [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
+  * [STM32CubeMonitor - Monitoring tool to test STM32 applications at run-time](https://www.st.com/en/development-tools/stm32cubemonitor.html)
+  * ST-Link Progrmmer
+    * [ST-Link Board Firmware upgrade](https://www.st.com/en/development-tools/stsw-link007.html)
+    * [STLINK Programmer USB Drivers](https://www.st.com/en/development-tools/stsw-link009.html)
+    * [USB driver for ST-LINK/V2, ST-LINK/V2-1 and STLINK-V3 (PDF)](https://www.st.com/resource/en/data_brief/stsw-link009.pdf)
+
 ## Project Setup
 
 ### WARNINGS

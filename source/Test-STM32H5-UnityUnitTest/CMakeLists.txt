@@ -68,14 +68,26 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 )
 
 ## Unity Unit Testing Framework
+if (CMAKE_CROSSCOMPILING)
+  # message(WARNING "Unit testing is not supported when cross-compiling. Skipping Unity tests.")
+  message(STATUS "Cross compiling for board. Skipping Unity tests.")
+else()
+  message(STATUS "Unit testing enabled. Adding Unity tests.")
 
-##enable_testing()
-### add_subdirectory(tests)
-##set(UNITY_SRC libs/Unity/src/)
-##add_library(Unity STATIC ${UNITY_SRC}/unity.c)
-##target_include_directories(Unity PUBLIC ${UNITY_SRC})
-##
-### Example for single test file
-##add_executable(test_example tests/test_example.c Core/Src/main.c)
-##target_link_libraries(test_example Unity Core/Src)
-##add_test(NAME test_example COMMAND test_example)
+  set(UNITY_SRC libs/Unity/src/)
+
+  enable_testing()
+  add_library(Unity STATIC ${UNITY_SRC}/unity.c)
+  target_include_directories(Unity PUBLIC ${UNITY_SRC})
+
+  ### Create Executable
+  add_subdirectory(tests)
+  add_executable(test_example tests/test_example.c)
+  ## add_executable(test_example tests/test_example.c Core/Src/main.c)
+
+  target_link_libraries(test_example Unity Core/Src)
+
+  ## Add test file
+  add_test(NAME test_example COMMAND test_example)
+
+endif()

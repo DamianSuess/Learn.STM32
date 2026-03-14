@@ -1,6 +1,23 @@
 # STM32 Nucleo H563ZI - Blinky LEDs
 
+## What's In The Repo
+
+* **Template Files**
+  * VS Code Profile
+    * File: `suesslabs.clang-format`
+  * CLang-Format - _Source code formatting rules_
+    * File: `basic.clang-format` - _recommended ruleset based on Microsoft_
+    * File: `suesslabs.clang-format` - _looser `{ }` rules alternative_
+    * `test-ugly-1.c` - _test file for formatter before beautification_
+* **STM32 Sample Projects**
+  * Test-Nucleo-H563ZI-LEDs - _Blinking LEDs and Toggled LED (based on CubeMX Generated)_
+  * Test-STM32-BlankProject - _Empty STM32 Project (VS Code generated)_
+
 ## Project Setup
+
+### WARNINGS
+
+> Say "NO" to VS Code's _C/C++ Tools Extension_, it conflicts with STM32's built-in C/C++ intellisense.
 
 ### Configuration
 

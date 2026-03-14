@@ -33,6 +33,16 @@ namespace LevelTwoNamespace
              array + size;
     }
 
+    // Rules:
+    //  - ColumnLimit: 120
+    //  - ContuationIndentWidth: 2
+    //  - IndentWidth: 2
+    uint8_t lineGroup = LINE_PAST_120COL_MARK | SOME_CONSTANT2 | SOME_CONSTANT3 | SOME_CONDDDDDDDDDDDDDSTANT4 |
+                        SOME_CONSTANT5 | SOME_CONSanntesTANT6;
+
+    uint8_t lineWraps =
+      LINE_SHY_120COL_MARK | SOME_CONSTANT2 | SOME_CONSTANT3 | SOME_CONDDDDDDDDDDddddDDDSTANT4 | SOME_CONSTANT5;
+
     std::vector<uint32_t> returnVector(uint32_t* LongNameForParameter1,
                                        double* LongNameForParameter2,
                                        const float& LongNameForParameter3,

@@ -11,6 +11,7 @@ AlignEscapedNewlines: DontAlign
 AlignOperands: 'true'
 AlignTrailingComments: 'true'
 BreakBeforeBraces: Allman
+ColumnLimit: '120'
 IncludeBlocks: Regroup
 IndentCaseLabels: 'true'
 IndentWidth: '2'

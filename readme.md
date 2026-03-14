@@ -47,13 +47,26 @@
 1. File > Open Folder > Load Project
 2. "Would you like to configure discovered CMake project(s) as STM32Cube project(s)?"
    * Click, YES
-3. 
+3.
 
 ## Code Formatter
 
 VS Code by default uses clang-format. The '_Xeno Innovations_' style used in the projects is based on Microsoft but with 2 spaces and maintains tidyness.
 
 > Execute the formatter via `SHIFT-ALT-F`.
+
+### VS Code `settings.json`
+
+Additional rules are applied to the projects to ensure that the clang code formatting and linters are being applied.
+
+```json
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnPaste": true,
+    "stm32cube-ide-clangd.enableFormatting": true,
+    "stm32cube-ide-clangd.enableLinting": true,
+```
 
 ## References
 

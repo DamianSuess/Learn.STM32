@@ -13,6 +13,8 @@
     "stm32cube-ide-clangd.enableFormatting": true,
     "stm32cube-ide-clangd.enableLinting": true,
     "stm32cube-ide-clangd.path": "cube",
-    "editor.mouseWheelZoom": true
+    "editor.mouseWheelZoom": true,
+    "workbench.editor.enablePreview": false,
+    "extensions.ignoreRecommendations": true,
   }
 }

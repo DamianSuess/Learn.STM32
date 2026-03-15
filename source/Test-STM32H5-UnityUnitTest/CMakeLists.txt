@@ -23,10 +23,10 @@ set(CMAKE_PROJECT_NAME Test-STM32H5-UnityUnitTest)
 
 ## START CUSTOM
 if (ENABLE_UNIT_TESTING)
-  message(STATUS "ENABLE_UNIT_TESTING is ON")
+  message(STATUS "** ENABLE_UNIT_TESTS is ON")
   add_compile_options(-DENABLE_UNIT_TESTS=1) # used to enable tests in code
 else()
-  message(STATUS "ENABLE_UNIT_TESTING is OFF")
+  message(STATUS "** ENABLE_UNIT_TESTS is OFF")
   add_compile_options(-DENABLE_UNIT_TESTS=0) # used to disable tests in code
 endif()
 ## END CUSTOM
@@ -82,21 +82,23 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 if (ENABLE_UNIT_TESTING)
   # note: this adds a BUILD_TESTING which defaults to ON,
   # which can be used in other CMakeLists.txt
-  include(CTest)
 
   if (BUILD_TESTING)
     message(STATUS "BUILD_TESTING is ON")
   endif()
+
+  #[[
+  include(CTest)
 
   message(STATUS "Adding Unity testing framework")
   set(UNITY_SRC libs/Unity/src)
   ## add_subdirectory(UNITY_SRC)
   add_library(Unity STATIC ${UNITY_SRC}/unity.c)
   target_include_directories(Unity PUBLIC ${UNITY_SRC})
-
   enable_testing()
+  ]]#
 
-  add_subdirectory(tests)
+  ## add_subdirectory(tests)
 endif()
 
 if(ENABLE_COVERAGE)

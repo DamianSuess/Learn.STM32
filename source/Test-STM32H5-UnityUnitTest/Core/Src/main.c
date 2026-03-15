@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "helpers.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,6 +104,11 @@ int main(void)
     int a = 1;
     int b = a;
     a = a + b;
+
+    uint8_t c = Add(a, b);
+    int8_t d = Subtract(a, b);
+    a = c + d;
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -1,7 +1,8 @@
 // Copyright 2026 Suess Labs, Inc. All rights reserved.
 
-#include "unity.h"
-#include "unity_internals.h"
+#if ENABLE_UNIT_TESTS
+#include "../libs/Unity/src/unity.h"
+#include "../libs/Unity/src/unity_internals.h"
 // #include "test_example.h"
 
 #define UNITY_INCLUDE_PRINT_FORMATTED
@@ -40,3 +41,5 @@ void test_example(void)
 
   // TEST_PRINTF("This is an example test case.\n");
 }
+
+#endif // ENABLE_UNIT_TESTS

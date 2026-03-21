@@ -12,9 +12,11 @@ AlignOperands: 'true'
 AlignTrailingComments: 'true'
 BreakBeforeBraces: Allman
 ColumnLimit: '120'
-IncludeBlocks: Regroup
+ContinuationIndentWidth: '2'
+IncludeBlocks: Merge
 IndentCaseLabels: 'true'
 IndentWidth: '2'
+InsertNewlineAtEOF: true
 MaxEmptyLinesToKeep: '1'
 NamespaceIndentation: All
 SortIncludes: 'true'
@@ -28,5 +30,4 @@ SpacesInParentheses: 'false'
 SpacesInSquareBrackets: 'false'
 TabWidth: '2'
 UseTab: Never
-
 ...

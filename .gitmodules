@@ -1,0 +1,3 @@
+[submodule "source/Test-STM32H5-UnityUnitTest2/libs/Unity"]
+	path = source/Test-STM32H5-UnityUnitTest2/libs/Unity
+	url = https://github.com/ThrowTheSwitch/Unity.git

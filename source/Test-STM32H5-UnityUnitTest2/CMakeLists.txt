@@ -26,7 +26,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 # Core project settings
 project(${CMAKE_PROJECT_NAME})
-message("Build type: " ${CMAKE_BUILD_TYPE})
+message("Build type: " '${CMAKE_BUILD_TYPE}')
 
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
@@ -45,6 +45,7 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    Core/Src/business/sample.c
 )
 
 # Add include paths
@@ -66,3 +67,39 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+###################
+# Target group specific settings
+
+message(STATUS "Build type: '${CMAKE_BUILD_TYPE}'")
+
+## Manually setting the TARGET_GROUP variable to force building the test group.
+## In a real project, this could be set via command line or CMake GUI.
+
+set(TARGET_GROUP "test" CACHE STRING "Target group to build (e.g. test, Release)")
+
+if (TARGET_GROUP STREQUAL "test")
+
+  message(STATUS "Configuring for TEST target group...")
+  include(CTest)
+  #enable_testing()
+
+  add_subdirectory(Core/Src/business)
+  add_subdirectory(libs)
+  add_subdirectory(tests)
+
+  message(STATUS "### DONE ###")
+
+elseif(TARGET_GROUP STREQUAL "Production")
+  # Production specific settings
+  message(STATUS "Configuring for Production target group...")
+else()
+  message(FATAL_ERROR "Unknown target group: ${TARGET_GROUP}")
+endif()
+
+###################
+# Helpers:
+#[[
+  message(WARNING "Unknown target group: ${TARGET_GROUP}")
+  message(FATAL_ERROR "Given TARGET_GROUP unknown")
+#]]

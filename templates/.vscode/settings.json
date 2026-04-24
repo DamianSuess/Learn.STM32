@@ -1,6 +1,7 @@
 {
   //"extensions.ignoreRecommendations": true,
   //"workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": false,
   "cmake.cmakePath": "cube-cmake",
   "cmake.configureArgs": [
     "-DCMAKE_COMMAND=cube-cmake"
@@ -14,6 +15,8 @@
     "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc*",
     "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-g++*"
   ],
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "extensions.ignoreRecommendations": true,
   "editor.detectIndentation": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,

@@ -18,18 +18,6 @@
 * STMicro Tools Needed
   * [STM32CubeIDE (for VS Code)](https://www.st.com/en/development-tools/stm32cubeide.html)
 
-
-### Other STMicro Tools
-
-* [STM32CubeMX - Initialization Code Generator](https://www.st.com/en/development-tools/stm32cubemx.html)
-* [STM32CubeCLT - Command Line Tools](https://www.st.com/en/development-tools/stm32cubeclt.html)
-* [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-* [STM32CubeMonitor - Monitoring tool to test STM32 applications at run-time](https://www.st.com/en/development-tools/stm32cubemonitor.html)
-* ST-Link Progrmmer
-  * [ST-Link Board Firmware upgrade](https://www.st.com/en/development-tools/stsw-link007.html)
-  * [STLINK Programmer USB Drivers](https://www.st.com/en/development-tools/stsw-link009.html)
-  * [USB driver for ST-LINK/V2, ST-LINK/V2-1 and STLINK-V3 (PDF)](https://www.st.com/resource/en/data_brief/stsw-link009.pdf)
-
 ## Project Setup
 
 ### WARNINGS
@@ -51,7 +39,24 @@
 1. File > Open Folder > Load Project
 2. "Would you like to configure discovered CMake project(s) as STM32Cube project(s)?"
    * Click, YES
-3.
+
+## Unit Tests
+
+### Raw Unit Tests
+
+1. Open either project
+   * Raw-CMake-Unity-Example-Full
+   * Raw-CMake-Unity-Example-Minified
+2. Run, **CMake: Clean Rebuild**
+   * ![](docs/Raw-01-CleanRebuild.png)
+3. Select **Build Kit** to Configure with
+   * _i.e. Visual Studio if you have it installed_
+   * ![](docs/Raw-02-Select-BuildKit.png)
+4. Run the tests
+
+If you run into an issue by selecting "Unspecified", here's the  quick fix:
+
+![](docs/Raw-03-Fixing-Unspecified-Configuration.png)
 
 ## Code Formatter
 
@@ -86,3 +91,14 @@ Additional rules are applied to the projects to ensure that the clang code forma
 
 * [Get started with STM32Cube for VS Code: from installation to debugging](https://www.youtube.com/watch?v=aWMni01XGeI)
 * [CppUTest for Embedded C Off-Target (non STM32) Article with CMake](https://blog.martincowen.me.uk/unit-testing-embedded-c-off-target-with-cpputest-on-windows.html)
+
+### Other STMicro Tools
+
+* [STM32CubeMX - Initialization Code Generator](https://www.st.com/en/development-tools/stm32cubemx.html)
+* [STM32CubeCLT - Command Line Tools](https://www.st.com/en/development-tools/stm32cubeclt.html)
+* [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
+* [STM32CubeMonitor - Monitoring tool to test STM32 applications at run-time](https://www.st.com/en/development-tools/stm32cubemonitor.html)
+* ST-Link Progrmmer
+  * [ST-Link Board Firmware upgrade](https://www.st.com/en/development-tools/stsw-link007.html)
+  * [STLINK Programmer USB Drivers](https://www.st.com/en/development-tools/stsw-link009.html)
+  * [USB driver for ST-LINK/V2, ST-LINK/V2-1 and STLINK-V3 (PDF)](https://www.st.com/resource/en/data_brief/stsw-link009.pdf)

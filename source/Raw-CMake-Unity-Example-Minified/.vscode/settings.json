@@ -6,6 +6,13 @@
   "cmake.preferredGenerators": [
     "Ninja"
   ],
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask",
+    "cmake.build",
+    "cmake.cleanRebuild",
+    "cmake.clean"
+  ],
   "stm32cube-ide-clangd.path": "cube",
   "stm32cube-ide-clangd.arguments": [
     "starm-clangd",

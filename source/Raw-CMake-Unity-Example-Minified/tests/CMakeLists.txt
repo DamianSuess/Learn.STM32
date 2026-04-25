@@ -9,7 +9,7 @@ add_executable(suite_1_app
 # Unity       - Defined in libs/Unity-min/CMakeLists.txt
 target_link_libraries(suite_1_app
   source_code
-  Unity
+  UnityLib
 )
 
 # Name of Test Group: test_suite1_name

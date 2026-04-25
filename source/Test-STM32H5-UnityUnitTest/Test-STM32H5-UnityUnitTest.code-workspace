@@ -10,10 +10,11 @@
       "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc*",
       "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-g++*"
     ],
-    "extensions.ignoreRecommendations": true,
     "stm32cube-ide-clangd.enableFormatting": true,
     "stm32cube-ide-clangd.enableLinting": true,
+    "stm32cube-ide-clangd.path": "cube",
+    "editor.mouseWheelZoom": true,
     "workbench.editor.enablePreview": false,
-    "stm32cube-ide-clangd.path": "cube"
+    "extensions.ignoreRecommendations": true,
   }
 }

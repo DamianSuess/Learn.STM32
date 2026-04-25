@@ -13,18 +13,10 @@
   * Test-Nucleo-H563ZI-LEDs - _Blinking LEDs and Toggled LED (based on CubeMX Generated)_
   * Test-STM32-BlankProject - _Empty STM32 Project (VS Code generated)_
 
-## Recommended Tools
+## Tools Needed
 
 * STMicro Tools Needed
   * [STM32CubeIDE (for VS Code)](https://www.st.com/en/development-tools/stm32cubeide.html)
-  * [STM32CubeMX]()
-* Nice to Have
-  * [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-  * [STM32CubeMonitor - Monitoring tool to test STM32 applications at run-time](https://www.st.com/en/development-tools/stm32cubemonitor.html)
-  * ST-Link Progrmmer
-    * [ST-Link Board Firmware upgrade](https://www.st.com/en/development-tools/stsw-link007.html)
-    * [STLINK Programmer USB Drivers](https://www.st.com/en/development-tools/stsw-link009.html)
-    * [USB driver for ST-LINK/V2, ST-LINK/V2-1 and STLINK-V3 (PDF)](https://www.st.com/resource/en/data_brief/stsw-link009.pdf)
 
 ## Project Setup
 
@@ -47,7 +39,24 @@
 1. File > Open Folder > Load Project
 2. "Would you like to configure discovered CMake project(s) as STM32Cube project(s)?"
    * Click, YES
-3.
+
+## Unit Tests
+
+### Raw Unit Tests
+
+1. Open either project
+   * Raw-CMake-Unity-Example-Full
+   * Raw-CMake-Unity-Example-Minified
+2. Run, **CMake: Clean Rebuild**
+   * ![](docs/Raw-01-CleanRebuild.png)
+3. Select **Build Kit** to Configure with
+   * _i.e. Visual Studio if you have it installed_
+   * ![](docs/Raw-02-Select-BuildKit.png)
+4. Run the tests
+
+If you run into an issue by selecting "Unspecified", here's the  quick fix:
+
+![](docs/Raw-03-Fixing-Unspecified-Configuration.png)
 
 ## Code Formatter
 
@@ -68,6 +77,28 @@ Additional rules are applied to the projects to ensure that the clang code forma
     "stm32cube-ide-clangd.enableLinting": true,
 ```
 
+## Unit Testing Framework
+
+| Name        | Languages | Details | Link |
+|-------------|-----------|---------|------|
+| Unity       | C         | C-only embedded compiler. Integrates with CMoke, CMake/CTest. _If using Ceedling, requires Ruby_ (off-target friendly) | https://www.throwtheswitch.org/unity |
+| CppUTest    | C         | Designed with embedded developers (off-target friendly) | https://cpputest.github.io |
+| Google Test | C/C++     | Primarially a C++ framework. Must warap with `extern "C"` to test with C. Robust CMake support for C++. | |
+| CTest       | N/A       | Built into CMake. It's a test driver, not a full-fledge assertion library that runs your test executions. Does work with Unity, CppUTest.. | |
+| Catch2      | C++       | N/A | |
+
 ## References
 
 * [Get started with STM32Cube for VS Code: from installation to debugging](https://www.youtube.com/watch?v=aWMni01XGeI)
+* [CppUTest for Embedded C Off-Target (non STM32) Article with CMake](https://blog.martincowen.me.uk/unit-testing-embedded-c-off-target-with-cpputest-on-windows.html)
+
+### Other STMicro Tools
+
+* [STM32CubeMX - Initialization Code Generator](https://www.st.com/en/development-tools/stm32cubemx.html)
+* [STM32CubeCLT - Command Line Tools](https://www.st.com/en/development-tools/stm32cubeclt.html)
+* [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
+* [STM32CubeMonitor - Monitoring tool to test STM32 applications at run-time](https://www.st.com/en/development-tools/stm32cubemonitor.html)
+* ST-Link Progrmmer
+  * [ST-Link Board Firmware upgrade](https://www.st.com/en/development-tools/stsw-link007.html)
+  * [STLINK Programmer USB Drivers](https://www.st.com/en/development-tools/stsw-link009.html)
+  * [USB driver for ST-LINK/V2, ST-LINK/V2-1 and STLINK-V3 (PDF)](https://www.st.com/resource/en/data_brief/stsw-link009.pdf)

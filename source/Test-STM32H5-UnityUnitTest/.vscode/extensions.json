@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "stmicroelectronics.stm32-vscode-extension",
+    "eamodio.gitlens",
+    "yzhang.markdown-all-in-one",
+    "ms-vscode.vscode-serial-monitor",
+    "jacqueslucke.gcov-viewer",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "marus25.cortex-debug"
+  ]
+}

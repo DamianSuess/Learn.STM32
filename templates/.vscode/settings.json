@@ -1,4 +1,7 @@
 {
+  //"extensions.ignoreRecommendations": true,
+  //"workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": false,
   "cmake.cmakePath": "cube-cmake",
   "cmake.configureArgs": [
     "-DCMAKE_COMMAND=cube-cmake"
@@ -6,6 +9,7 @@
   "cmake.preferredGenerators": [
     "Ninja"
   ],
+  "stm32cube-ide-clangd.path": "cube",
   "stm32cube-ide-clangd.arguments": [
     "starm-clangd",
     "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc*",
@@ -22,8 +26,6 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
-  "stm32cube-ide-clangd.path": "cube",
   "stm32cube-ide-clangd.enableFormatting": true,
   "stm32cube-ide-clangd.enableLinting": true,
-  "workbench.editor.enablePreview": false,
 }

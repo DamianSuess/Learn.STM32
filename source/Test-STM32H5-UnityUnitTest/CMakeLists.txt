@@ -21,6 +21,16 @@ endif()
 # Set the project name
 set(CMAKE_PROJECT_NAME Test-STM32H5-UnityUnitTest)
 
+## START CUSTOM
+if (ENABLE_UNIT_TESTING)
+  message(STATUS "** ENABLE_UNIT_TESTS is ON")
+  add_compile_options(-DENABLE_UNIT_TESTS=1) # used to enable tests in code
+else()
+  message(STATUS "** ENABLE_UNIT_TESTS is OFF")
+  add_compile_options(-DENABLE_UNIT_TESTS=0) # used to disable tests in code
+endif()
+## END CUSTOM
+
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
@@ -66,3 +76,60 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+####################
+# Unit Test support
+
+if (ENABLE_UNIT_TESTING)
+  # note: this adds a BUILD_TESTING which defaults to ON,
+  # which can be used in other CMakeLists.txt
+
+  if (BUILD_TESTING)
+    message(STATUS "BUILD_TESTING is ON")
+  endif()
+
+  #[[
+  include(CTest)
+
+  message(STATUS "Adding Unity testing framework")
+  set(UNITY_SRC libs/Unity/src)
+  ## add_subdirectory(UNITY_SRC)
+  add_library(Unity STATIC ${UNITY_SRC}/unity.c)
+  target_include_directories(Unity PUBLIC ${UNITY_SRC})
+  enable_testing()
+  ]]#
+
+  ## add_subdirectory(tests)
+endif()
+
+if(ENABLE_COVERAGE)
+
+  message(STATUS "Code Coverage NOT-IMPLEMENTED yet. Skipping.")
+
+endif()
+
+#[[
+## Unity Unit Testing Framework
+if (CMAKE_CROSSCOMPILING)
+  # message(WARNING "Unit testing is not supported when cross-compiling. Skipping Unity tests.")
+  message(STATUS "Cross compiling for board. Skipping Unity tests.")
+else()
+  message(STATUS "Unit testing enabled. Adding Unity tests.")
+
+  set(UNITY_SRC libs/Unity/src/)
+
+  enable_testing()
+  add_library(Unity STATIC ${UNITY_SRC}/unity.c)
+  target_include_directories(Unity PUBLIC ${UNITY_SRC})
+
+  ### Create Executable
+  add_subdirectory(tests)
+  add_executable(test_example tests/test_example.c)
+  ## add_executable(test_example tests/test_example.c Core/Src/main.c)
+
+  target_link_libraries(test_example Unity Core/Src)
+
+  ## Add test file
+  add_test(NAME test_example COMMAND test_example)
+
+endif()
+#]]

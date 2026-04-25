@@ -53,13 +53,16 @@ extern "C"
   /* Exported functions prototypes ---------------------------------------------*/
   void Error_Handler(void);
 
-  /* USER CODE BEGIN EFP */
+/* USER CODE BEGIN EFP */
 
-  /* USER CODE END EFP */
+/* USER CODE END EFP */
 
-  /* Private defines -----------------------------------------------------------*/
+/* Private defines -----------------------------------------------------------*/
 
-  /* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN Private defines */
+
+// If using unit tests, maybe do some magic
+#define USE_UNIT_TESTS (1 && defined(ENABLE_UNIT_TESTS) && ENABLE_UNIT_TESTS == 1)
 
   /* USER CODE END Private defines */
 

@@ -1,0 +1,16 @@
+{
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "extensions.ignoreRecommendations": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "stm32cube-ide-clangd.enableFormatting": true,
+  "stm32cube-ide-clangd.enableLinting": true,
+  "workbench.editor.enablePreview": false,
+}

@@ -139,6 +139,16 @@ public partial class MainForm : Form
     }
 
     var text = TxtSend.Text ?? string.Empty;
+    var bytes = _serial.Encoding.GetBytes(text);
+    string output = CurrentReceiveMode switch
+    {
+      ReceiveOutputMode.AsciiOnly => ByteHelper.ToAsciiOnlyWithTimestamp(text),// Use the port encoding to decode bytes
+      ReceiveOutputMode.HexOnly => ByteHelper.ToHexGroupedWithTimestamp(bytes, bytes.Length, bytesPerLine: 16),
+      _ => ByteHelper.ToHexAndAsciiSideBySide(bytes, bytes.Length, bytesPerLine: 16), // ASCII + Hex side-by-side
+    };
+
+    TxtReceive.AppendText($"Tx >{Environment.NewLine}");
+    TxtReceive.AppendText(output);
 
     try
     {
@@ -148,7 +158,6 @@ public partial class MainForm : Form
       }
       else
       {
-        var bytes = _serial.Encoding.GetBytes(text);
         _serial.Write(bytes, 0, bytes.Length);
       }
     }
@@ -283,12 +292,22 @@ public partial class MainForm : Form
             break;
         }
 
+        TxtReceive.AppendText($"Rx >{Environment.NewLine}");
         TxtReceive.AppendText(output);
       }));
     }
     catch
     {
       // Ignore receive errors during disconnect/close
+    }
+  }
+
+  private void TxtSend_KeyPress(object sender, KeyPressEventArgs e)
+  {
+    if (e.KeyChar == (char)Keys.Return || e.KeyChar == (char)Keys.Enter)
+    {
+      e.Handled = true;
+      BtnSendText_Click(sender, e);
     }
   }
 
@@ -303,14 +322,5 @@ public partial class MainForm : Form
     BtnRefreshPorts.Enabled = !isConnected;
 
     LblStatus.Text = isConnected ? "Connected" : "Disconnected";
-  }
-
-  private void TxtSend_KeyPress(object sender, KeyPressEventArgs e)
-  {
-    if (e.KeyChar == (char)Keys.Return || e.KeyChar == (char)Keys.Enter)
-    {
-      e.Handled = true;
-      BtnSendText_Click(sender, e);
-    }
   }
 }

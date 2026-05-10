@@ -99,6 +99,7 @@ partial class MainForm
     TxtSend.Name = "TxtSend";
     TxtSend.Size = new Size(516, 23);
     TxtSend.TabIndex = 6;
+    TxtSend.KeyPress += TxtSend_KeyPress;
     // 
     // BtnSendText
     // 

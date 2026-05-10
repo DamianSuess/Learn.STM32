@@ -304,4 +304,13 @@ public partial class MainForm : Form
 
     LblStatus.Text = isConnected ? "Connected" : "Disconnected";
   }
+
+  private void TxtSend_KeyPress(object sender, KeyPressEventArgs e)
+  {
+    if (e.KeyChar == (char)Keys.Return || e.KeyChar == (char)Keys.Enter)
+    {
+      e.Handled = true;
+      BtnSendText_Click(sender, e);
+    }
+  }
 }

@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardSerialPortTester", "BoardSerialPortTester\BoardSerialPortTester.csproj", "{0F1E5F9C-997B-4D56-B9E9-AF9CF9DF3A4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialTester", "SerialTester\SerialTester.csproj", "{0F1E5F9C-997B-4D56-B9E9-AF9CF9DF3A4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
